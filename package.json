@@ -1,0 +1,20 @@
+{
+  "name": "toy-robot-coding-challenge",
+  "version": "1.0.0",
+  "description": "Toy Robot Coding Challenge",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arjun555/toy-robot-coding-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arjun555/toy-robot-coding-challenge/issues"
+  },
+  "homepage": "https://github.com/arjun555/toy-robot-coding-challenge#readme"
+}
