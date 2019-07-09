@@ -4,7 +4,7 @@
   "description": "Toy Robot Coding Challenge",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/arjun555/toy-robot-coding-challenge/issues"
   },
-  "homepage": "https://github.com/arjun555/toy-robot-coding-challenge#readme"
+  "homepage": "https://github.com/arjun555/toy-robot-coding-challenge#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
 }
