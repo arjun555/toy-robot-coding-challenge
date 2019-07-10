@@ -6,6 +6,7 @@ class Robot{
             y: 0,
             orientation: 'north'
         }
+        this.placed = false
     }
 
     place (x, y, orientation){
@@ -15,6 +16,8 @@ class Robot{
             y: y,
             orientation: orientation 
         }
+        // set robot to be placed
+        this.placed = true
     }
 
 }
