@@ -24,4 +24,44 @@ describe('Robot Commands', ()=> {
             orientation: 'south'
         })
     })
+
+    test('that move() with the orientation as north, increments the y position', ()=>{
+        TestRobot.place(0, 0, 'north')
+        TestRobot.move()
+        expect(TestRobot.position).toStrictEqual({
+            x: 0,
+            y: 1,
+            orientation: 'north'
+        })
+    })
+
+    test('that move() with the orientation as east, increments the x position', ()=>{
+        TestRobot.place(0, 0, 'east')
+        TestRobot.move()
+        expect(TestRobot.position).toStrictEqual({
+            x: 1,
+            y: 0,
+            orientation: 'east'
+        })
+    })
+
+    test('that move() with the orientation as south, decrements the y position', ()=>{
+        TestRobot.place(5, 5, 'south')
+        TestRobot.move()
+        expect(TestRobot.position).toStrictEqual({
+            x: 5,
+            y: 4,
+            orientation: 'south'
+        })
+    })
+
+    test('that move() with the orientation as west, decrements the x position', ()=>{
+        TestRobot.place(5, 5, 'west')
+        TestRobot.move()
+        expect(TestRobot.position).toStrictEqual({
+            x: 4,
+            y: 5,
+            orientation: 'west'
+        })
+    })
 })

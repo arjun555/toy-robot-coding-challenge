@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 
 // Set Table constants
 const table = {
-    dimensions = {x: 5, y: 5}
+    dimensions: {x: 5, y: 5}
 }
 
 // Prompt user for a Command
@@ -18,16 +18,16 @@ rl.prompt();
 //   - 'line' is for cl input. Executed when the user presses 'enter' key
 //   - 'close' is on termination of program
 rl.on('line', (input) => {
-  switch (input.trim()) {
-    case `place ${process.argv[1], process.argv[2], process.argv[3]}`:
-        console.log(`Your command was: place ${process.argv[1], process.argv[2], process.argv[3]}`)
-    case 'exit':
-        rl.close()
-    default:
-      console.log(`Your input was: '${input.trim()}'`);
-      break;
-  }
-  rl.prompt();
+    switch (input.trim()) {
+        case `place ${process.argv[1], process.argv[2], process.argv[3]}`:
+            console.log(`Your command was: place ${process.argv[1], process.argv[2], process.argv[3]}`)
+        case 'exit':
+            rl.close()
+        default:
+            console.log(`Your input was: '${input.trim()}'`);
+            break;
+        }
+    rl.prompt();
 }).on('close', () => {
   console.log('Have a great day!');
   process.exit();

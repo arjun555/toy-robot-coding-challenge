@@ -9,6 +9,9 @@ class Robot{
         this.placed = false
     }
 
+    /*
+        Place - places the robot at the specified x/y position facing the given orientation
+    */
     place (x, y, orientation){
         // set position of robot
         this.position = {
@@ -20,6 +23,28 @@ class Robot{
         this.placed = true
     }
 
+    /*
+        Move - moves the robot one unit in the direction of it's orientation
+    */
+    move (){
+        switch(this.position.orientation){
+            case 'north':
+                this.position.y += 1
+                break;
+            case 'east':
+                this.position.x += 1
+                break;
+            case 'south':
+                this.position.y -= 1
+                break;
+            case 'west':
+                this.position.x -= 1
+                break;
+            default:
+                // do nothing
+                break;
+        }
+    }
 }
 
 module.exports = {
