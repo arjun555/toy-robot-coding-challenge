@@ -1,14 +1,6 @@
-
 class Robot{
 
     constructor(){
-        this.limits = {
-            xMax: 5,
-            xMin: 0,
-            yMax: 5,
-            yMin: 0
-        }
-        
         this.position = {
             x: 0,
             y: 0,
@@ -24,6 +16,7 @@ class Robot{
             orientation: orientation 
         }
     }
+
 }
 
 module.exports = {

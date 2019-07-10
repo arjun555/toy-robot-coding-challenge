@@ -6,9 +6,10 @@ const rl = readline.createInterface({
   prompt: 'Enter Command > '
 });
 
-// Set grid constants
-const xMax = 5;
-const yMax = 5;
+// Set Table constants
+const table = {
+    dimensions = {x: 5, y: 5}
+}
 
 // Prompt user for a Command
 rl.prompt();
