@@ -91,6 +91,13 @@ class Robot{
                 break;
         }
     }
+
+    /*
+        Report - Return the robot's position and orientation
+    */
+   report(){
+       return `${this.position.x}, ${this.position.y}, ${this.position.orientation.toUpperCase()}`
+   }
 }
 
 module.exports = {

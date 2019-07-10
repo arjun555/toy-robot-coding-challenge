@@ -145,4 +145,10 @@ describe('Robot Commands', ()=> {
         })
     })
 
+    test('that report() will return the robot position and orientation', ()=>{
+        TestRobot.place(0, 0, 'north')
+        expect(TestRobot.report()).toMatch('0, 0, NORTH')
+    })
+
+
 })
