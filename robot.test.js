@@ -105,4 +105,44 @@ describe('Robot Commands', ()=> {
         })
     })
 
+    test('that right() with the orientation as north, sets the orientation to east', ()=>{
+        TestRobot.place(0, 0, 'north')
+        TestRobot.right()
+        expect(TestRobot.position).toMatchObject({
+            x: 0,
+            y: 0,
+            orientation: 'east'
+        })
+    })
+
+    test('that right() with the orientation as east, sets the orientation to south', ()=>{
+        TestRobot.place(0, 0, 'east')
+        TestRobot.right()
+        expect(TestRobot.position).toMatchObject({
+            x: 0,
+            y: 0,
+            orientation: 'south'
+        })
+    })
+
+    test('that right() with the orientation as south, sets the orientation to west', ()=>{
+        TestRobot.place(0, 0, 'south')
+        TestRobot.right()
+        expect(TestRobot.position).toMatchObject({
+            x: 0,
+            y: 0,
+            orientation: 'west'
+        })
+    })
+
+    test('that right() with the orientation as west, sets the orientation to north', ()=>{
+        TestRobot.place(0, 0, 'west')
+        TestRobot.right()
+        expect(TestRobot.position).toMatchObject({
+            x: 0,
+            y: 0,
+            orientation: 'north'
+        })
+    })
+
 })

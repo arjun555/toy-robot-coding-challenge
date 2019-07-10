@@ -68,6 +68,29 @@ class Robot{
                 break;
         }
    }
+
+    /*
+        Right - Rotate the robot right from its current orientation
+    */
+   right(){
+        switch(this.position.orientation){
+            case 'north':
+                this.position.orientation = 'east'
+                break;
+            case 'east':
+                this.position.orientation = 'south'
+                break;
+            case 'south':
+                this.position.orientation = 'west'
+                break;
+            case 'west':
+                this.position.orientation = 'north'
+                break;
+            default:
+                // do nothing
+                break;
+        }
+    }
 }
 
 module.exports = {
