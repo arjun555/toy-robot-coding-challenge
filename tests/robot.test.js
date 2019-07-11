@@ -40,7 +40,17 @@ describe('Robot Commands - Place', ()=>{
             y: 2,
             orientation: 'south'
         })
-    })    
+    })   
+    
+    test('that place(-2, 2, south) does not set the robot position', ()=>{
+        TestRobot.position = {x: 0, y: 0, orientation: 'north'}
+        TestRobot.place(-2, 2, 'south')
+        expect(TestRobot.position).toStrictEqual({
+            x: 0,
+            y: 0,
+            orientation: 'north'
+        })
+    })  
 })
 
 describe('Robot Commands - Move', ()=>{

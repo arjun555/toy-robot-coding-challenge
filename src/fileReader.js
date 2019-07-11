@@ -24,7 +24,11 @@ function getCommandFromLine(line){
     getPlaceCommandArgs - returns the arguments that are sent with the 'PLACE' command
 */
 function getPlaceCommandArgs(line){
-    let args = line.split(' ')[1].split(',')
+    // split command arguements from Place command
+    let index = line.indexOf(' ')
+    let args = line.slice(index + 1, ).split(',')
+    // clear any whitespace leftover from user input
+    args = args.map(value => value.trim())
     return args
 }
 

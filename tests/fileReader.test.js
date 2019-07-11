@@ -35,4 +35,10 @@ describe('Test File Reader', ()=>{
         let arr = ["1", "3", "north"]
         expect(getPlaceCommandArgs(input)).toMatchObject(arr)
     })
+
+    it('returns the PLACE command args as an array of 3 elements', ()=>{
+        let input = "place 1 , 3, north"
+        let arr = ["1", "3", "north"]
+        expect(getPlaceCommandArgs(input)).toMatchObject(arr)
+    })
 })

@@ -29,6 +29,7 @@ function validateOrientation(orientation){
     }
 }
 
+
 module.exports = {
     validateX: validateX,
     validateY: validateY,
