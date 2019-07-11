@@ -1,4 +1,4 @@
-const {readFile, convertDataToArray, getCommandFromLine} = require('./fileReader')
+const {readFile, getCommandFromLine, getPlaceCommandArgs} = require('./fileReader')
 
 describe('Test File Reader', ()=>{
 
@@ -11,7 +11,7 @@ describe('Test File Reader', ()=>{
     it('opens the file and returns multiple lines of commands as an array', ()=>{
         let data = readFile('testCommands.txt')
         let arr = [
-            "PLACE 1, 2, NORTH",
+            "PLACE 1,2,NORTH",
             "MOVE",
             "LEFT",
             "RIGHT",
@@ -26,8 +26,13 @@ describe('Test File Reader', ()=>{
     })
 
     it('gets the first word from a line of text, of multiple words', ()=>{
-        let input = "place 1, 3, north"
+        let input = "place 1,3,north"
         expect(getCommandFromLine(input)).toBe("place")
     })
 
+    it('returns the PLACE command args as an array of 3 elements', ()=>{
+        let input = "place 1,3,north"
+        let arr = ["1", "3", "north"]
+        expect(getPlaceCommandArgs(input)).toMatchObject(arr)
+    })
 })

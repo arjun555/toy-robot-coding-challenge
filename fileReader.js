@@ -20,8 +20,17 @@ function getCommandFromLine(line){
     return line.split(' ')[0]
 }
 
+/*
+    getPlaceCommandArgs - returns the arguments that are sent with the 'PLACE' command
+*/
+function getPlaceCommandArgs(line){
+    let args = line.split(' ')[1].split(',')
+    return args
+}
+
 module.exports = {
     readFile: readFile,
-    getCommandFromLine: getCommandFromLine
+    getCommandFromLine: getCommandFromLine,
+    getPlaceCommandArgs: getPlaceCommandArgs
 }
 

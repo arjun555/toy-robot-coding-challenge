@@ -1,34 +1,30 @@
-const readline = require('readline');
-// create the cl interface
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-  prompt: 'Enter Command > '
-});
-
-// Set Table constants
-const table = {
-    dimensions: {x: 5, y: 5}
+const {readFile, getCommandFromLine, getPlaceCommandArgs} = require('./fileReader')
+const {Robot} = require('./robot')
+let data = readFile('testCommands.txt')
+let ToyRobot = new Robot();
+let table = {
+    dimensions:{
+        x: 5,
+        y: 5
+    }
 }
 
-// Prompt user for a Command
-rl.prompt();
-
-// readline event handler
-//   - 'line' is for cl input. Executed when the user presses 'enter' key
-//   - 'close' is on termination of program
-rl.on('line', (input) => {
-    switch (input.trim()) {
-        case `place ${process.argv[1], process.argv[2], process.argv[3]}`:
-            console.log(`Your command was: place ${process.argv[1], process.argv[2], process.argv[3]}`)
-        case 'exit':
-            rl.close()
-        default:
-            console.log(`Your input was: '${input.trim()}'`);
+data.forEach(line => {
+    let command = getCommandFromLine(line)
+    switch(command){
+        case 'PLACE':
+            let args = getPlaceCommandArgs(line)
+            ToyRobot.place(args[0], args[1], args[2])
             break;
-        }
-    rl.prompt();
-}).on('close', () => {
-  console.log('Have a great day!');
-  process.exit();
-});
+        case 'MOVE':
+            break;
+        case 'LEFT':
+            break;
+        case 'RIGHT':
+            break;
+        case 'REPORT':
+            break;
+        default:
+            console.log('Command is not recognized')
+    }
+})
