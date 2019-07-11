@@ -15,9 +15,9 @@ class Robot{
     place (x, y, orientation){
         // set position of robot
         this.position = {
-            x: x,
-            y: y,
-            orientation: orientation 
+            x: Number(x),
+            y: Number(y),
+            orientation: orientation.toLowerCase() 
         }
         // set robot to be placed
         this.placed = true
