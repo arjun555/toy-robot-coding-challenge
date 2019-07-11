@@ -7,23 +7,21 @@ function readFile(filename){
     try{
         let data = fs.readFileSync(filename, 'utf8');
         console.log('File Loaded OK: ' + filename);
-        return data
+        return data.toString().split("\n")
     }catch(err){
         console.error(err)
     }
 }
 
 /*
-    convertDataToArray - converts data into a string and returns an array of each new line
+    getCommandFromLine - returns the command (first word) from an input line
 */
-function convertDataToArray(data){
-    return data.toString().split("\n")
+function getCommandFromLine(line){
+    return line.split(' ')[0]
 }
-
-
-
 
 module.exports = {
     readFile: readFile,
-    convertDataToArray: convertDataToArray
+    getCommandFromLine: getCommandFromLine
 }
+
