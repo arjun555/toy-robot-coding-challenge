@@ -4,7 +4,7 @@ const {Table} = require('./src/table')
 
 let ToyTable = new Table(5, 5)
 let ToyRobot = new Robot(ToyTable);
-let data = readFile('testCommands.txt')
+let data = readFile(process.argv[2])
 
 data.forEach(line => {
     let command = getCommandFromLine(line)
