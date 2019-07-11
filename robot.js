@@ -32,16 +32,24 @@ class Robot{
     move (){
         switch(this.position.orientation){
             case 'north':
-                this.position.y += 1
+                if (this.table.isPositionWithinTableBounds(this.position.x, this.position.y + 1)){
+                    this.position.y += 1
+                }
                 break;
             case 'east':
-                this.position.x += 1
+                if (this.table.isPositionWithinTableBounds(this.position.x + 1, this.position.y)){
+                    this.position.x += 1
+                }
                 break;
             case 'south':
-                this.position.y -= 1
+                if (this.table.isPositionWithinTableBounds(this.position.x, this.position.y - 1)){
+                    this.position.y -= 1
+                }
                 break;
             case 'west':
-                this.position.x -= 1
+                if (this.table.isPositionWithinTableBounds(this.position.x - 1, this.position.y)){
+                    this.position.x -= 1
+                }
                 break;
             default:
                 // do nothing
