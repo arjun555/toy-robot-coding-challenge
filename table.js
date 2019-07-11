@@ -11,6 +11,7 @@ class Table {
         if(posX <= this.dimensions.x && posY <= this.dimensions.y && posX >= 0 && posY >= 0){
             return true
         }else{
+            console.log(`The given positions are outside of the table bounds`)
             return false
         }
     }

@@ -1,26 +1,29 @@
 class Robot{
 
-    constructor(){
+    constructor(table){
         this.position = {
             x: 0,
             y: 0,
             orientation: 'north'
         }
-        this.placed = false
+        this.placed = false,
+        this.table = table
     }
 
     /*
         Place - places the robot at the specified x/y position facing the given orientation
     */
     place (x, y, orientation){
-        // set position of robot
-        this.position = {
-            x: Number(x),
-            y: Number(y),
-            orientation: orientation.toLowerCase() 
+        if (this.table.isPositionWithinTableBounds(x, y)){
+            // set position of robot
+            this.position = {
+                x: Number(x),
+                y: Number(y),
+                orientation: orientation.toLowerCase() 
+                }
+            // set robot to be placed
+            this.placed = true
         }
-        // set robot to be placed
-        this.placed = true
     }
 
     /*

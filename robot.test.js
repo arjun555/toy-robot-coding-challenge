@@ -1,19 +1,24 @@
 const {Robot} = require('./robot')
+const {Table} = require('./table')
 
 describe('Robot Commands', ()=> {
-
-    let TestRobot = new Robot();
-    test('that the default position for the robot is 0, 0, north and placed is false', ()=>{
-        obj = {
-                position: {x: 0, y:0, orientation: 'north'}, 
-                placed: false
-            }
-        expect(TestRobot).toMatchObject(obj)
-    })
+    
+    let TestTable = new Table(5, 5);
+    let TestRobot = new Robot(TestTable);
 
     test("that calling place() sets the robot property 'placed' to be true", ()=>{
         TestRobot.place(2, 2, 'south')
         expect(TestRobot.placed).toBe(true)
+    })
+
+    test('that place(6, 6, south) does not place, due to the positions exceeding the table boudaries', ()=>{
+        TestRobot.place(0, 0, 'south')
+        TestRobot.place(6, 6, 'south')
+        expect(TestRobot.position).toStrictEqual({
+            x: 0,
+            y: 0,
+            orientation: 'south'
+        })
     })
 
     test('that place(2, 2, south) sets the robot position', ()=>{
