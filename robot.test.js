@@ -1,8 +1,20 @@
 const {Robot} = require('./robot')
 const {Table} = require('./table')
 
-describe('Robot Commands', ()=> {
+describe('Robot Commands - Report', ()=> {
     
+    let TestTable = new Table(5, 5);
+    let TestRobot = new Robot(TestTable);
+
+    test('that report() will return the robot position and orientation', ()=>{
+        TestRobot.place(0, 0, 'north')
+        expect(TestRobot.report()).toMatch('0, 0, NORTH')
+    })
+
+})
+
+describe('Robot Commands - Place', ()=>{
+
     let TestTable = new Table(5, 5);
     let TestRobot = new Robot(TestTable);
 
@@ -28,7 +40,13 @@ describe('Robot Commands', ()=> {
             y: 2,
             orientation: 'south'
         })
-    })
+    })    
+})
+
+describe('Robot Commands - Move', ()=>{
+
+    let TestTable = new Table(5, 5);
+    let TestRobot = new Robot(TestTable);
 
     test('that move() with the orientation as north, increments the y position', ()=>{
         TestRobot.place(0, 0, 'north')
@@ -70,6 +88,22 @@ describe('Robot Commands', ()=> {
         })
     })
 
+    test('that move() will not move if next step if out of table bounds', ()=>{
+        TestRobot.place(5, 5, 'east')
+        TestRobot.move()
+        expect(TestRobot.position).toStrictEqual({
+            x: 5,
+            y: 5,
+            orientation: 'east'
+        })
+    })
+})
+
+describe('Robot Commands - Left', ()=>{
+
+    let TestTable = new Table(5, 5);
+    let TestRobot = new Robot(TestTable);
+
     test('that left() with the orientation as north, sets the orientation to west', ()=>{
         TestRobot.place(0, 0, 'north')
         TestRobot.left()
@@ -109,6 +143,12 @@ describe('Robot Commands', ()=> {
             orientation: 'south'
         })
     })
+})
+
+describe('Robot Commands - Right', ()=>{
+
+    let TestTable = new Table(5, 5);
+    let TestRobot = new Robot(TestTable);
 
     test('that right() with the orientation as north, sets the orientation to east', ()=>{
         TestRobot.place(0, 0, 'north')
@@ -149,11 +189,4 @@ describe('Robot Commands', ()=> {
             orientation: 'north'
         })
     })
-
-    test('that report() will return the robot position and orientation', ()=>{
-        TestRobot.place(0, 0, 'north')
-        expect(TestRobot.report()).toMatch('0, 0, NORTH')
-    })
-
-
 })
