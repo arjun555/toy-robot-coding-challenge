@@ -1,6 +1,6 @@
-const {readFile, getCommandFromLine, getPlaceCommandArgs} = require('./fileReader')
-const {Robot} = require('./robot')
-const {Table} = require('./table')
+const {readFile, getCommandFromLine, getPlaceCommandArgs} = require('./src/fileReader')
+const {Robot} = require('./src/robot')
+const {Table} = require('./src/table')
 
 let ToyTable = new Table(5, 5)
 let ToyRobot = new Robot(ToyTable);

@@ -1,4 +1,4 @@
-const {Table} = require('./table')
+const {Table} = require('../src/table')
 
 describe('Table Class', ()=>{
 

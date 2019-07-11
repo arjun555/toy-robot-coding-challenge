@@ -1,5 +1,5 @@
-const {Robot} = require('./robot')
-const {Table} = require('./table')
+const {Robot} = require('../src/robot')
+const {Table} = require('../src/table')
 
 describe('Robot Commands - Report', ()=> {
     

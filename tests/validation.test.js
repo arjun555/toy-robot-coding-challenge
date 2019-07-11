@@ -1,4 +1,4 @@
-const {validateX, validateY, validateOrientation} = require('./validation')
+const {validateX, validateY, validateOrientation} = require('../src/validation')
 
 describe('Input position values are validation', ()=> {
 

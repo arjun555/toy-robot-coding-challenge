@@ -1,15 +1,15 @@
-const {readFile, getCommandFromLine, getPlaceCommandArgs} = require('./fileReader')
+const {readFile, getCommandFromLine, getPlaceCommandArgs} = require('../src/fileReader')
 
 describe('Test File Reader', ()=>{
 
     it('opens the file and returns the data', ()=>{
-        let data = readFile('test.txt')
+        let data = readFile('./tests/test.txt')
         let arr = ["hello world"]
         expect(data).toMatchObject(arr)
     })
 
     it('opens the file and returns multiple lines of commands as an array', ()=>{
-        let data = readFile('testCommands.txt')
+        let data = readFile('./tests/testCommands.txt')
         let arr = [
             "PLACE 1,2,NORTH",
             "MOVE",
