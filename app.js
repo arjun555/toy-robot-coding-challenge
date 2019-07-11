@@ -1,13 +1,10 @@
 const {readFile, getCommandFromLine, getPlaceCommandArgs} = require('./fileReader')
 const {Robot} = require('./robot')
+const {Table} = require('./table')
+
+let ToyTable = new Table(5, 5)
+let ToyRobot = new Robot(ToyTable);
 let data = readFile('testCommands.txt')
-let ToyRobot = new Robot();
-let table = {
-    dimensions:{
-        x: 5,
-        y: 5
-    }
-}
 
 data.forEach(line => {
     let command = getCommandFromLine(line)
@@ -20,8 +17,10 @@ data.forEach(line => {
             ToyRobot.move()
             break;
         case 'LEFT':
+            ToyRobot.left()
             break;
         case 'RIGHT':
+            ToyRobot.right()
             break;
         case 'REPORT':
             let report = ToyRobot.report()
