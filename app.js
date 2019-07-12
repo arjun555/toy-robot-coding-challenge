@@ -8,27 +8,31 @@ let data = readFile(process.argv[2])
 
 if(data){
     data.forEach(line => {
-        let command = getCommandFromLine(line)
-        switch(command){
-            case 'PLACE':
-                let args = getPlaceCommandArgs(line)
-                ToyRobot.place(args[0], args[1], args[2])
-                break;
-            case 'MOVE':
-                ToyRobot.move()
-                break;
-            case 'LEFT':
-                ToyRobot.left()
-                break;
-            case 'RIGHT':
-                ToyRobot.right()
-                break;
-            case 'REPORT':
-                let report = ToyRobot.report()
-                console.log(`The ToyRobot is positioned at: ${report}`)
-                break;
-            default:
-                console.log('Command is not recognized')
-        }
+        handleCommands(line)
     })
+}
+
+function handleCommands(line){
+    let command = getCommandFromLine(line)
+    switch(command){
+        case 'PLACE':
+            let args = getPlaceCommandArgs(line)
+            ToyRobot.place(args[0], args[1], args[2])
+            break;
+        case 'MOVE':
+            ToyRobot.move()
+            break;
+        case 'LEFT':
+            ToyRobot.left()
+            break;
+        case 'RIGHT':
+            ToyRobot.right()
+            break;
+        case 'REPORT':
+            let report = ToyRobot.report()
+            console.log(`The ToyRobot is positioned at: ${report}`)
+            break;
+        default:
+            console.log('Command is not recognized')
+    }
 }
