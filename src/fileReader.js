@@ -7,7 +7,7 @@ function readFile(filename){
     try{
         isValidTextFile(filename)
         let data = fs.readFileSync(filename, 'utf8');
-        console.log('File Loaded OK: ' + filename);
+        console.log('Yay! The command file Loaded OK from: ' + filename);
         return data.toString().split("\n")
     }catch(err){
         if(err instanceof TypeError){

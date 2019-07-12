@@ -4,7 +4,8 @@
   "description": "Toy Robot Coding Challenge",
   "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node app.js ./commands/commands.txt"
   },
   "repository": {
     "type": "git",

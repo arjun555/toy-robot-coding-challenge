@@ -2,14 +2,18 @@ const {readFile, getCommandFromLine, getPlaceCommandArgs} = require('./src/fileR
 const {Robot} = require('./src/robot')
 const {Table} = require('./src/table')
 
+console.log('WELCOME TO THE TOY ROBOT')
+console.log('Let me load the commands...')
 let ToyTable = new Table(5, 5)
 let ToyRobot = new Robot(ToyTable);
 let data = readFile(process.argv[2])
 
 if(data){
+    console.log('Reading commands...')
     data.forEach(line => {
         handleCommands(line)
     })
+    console.log('All commands have been excuted. Thanks for playing! :)')
 }
 
 /*
