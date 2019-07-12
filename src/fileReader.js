@@ -5,11 +5,15 @@ const fs = require('fs')
 */
 function readFile(filename){
     try{
+        isValidTextFile(filename)
         let data = fs.readFileSync(filename, 'utf8');
         console.log('File Loaded OK: ' + filename);
         return data.toString().split("\n")
     }catch(err){
-        console.error(err)
+        if(err instanceof TypeError){
+            console.log('Please load a .txt file')
+        }
+        console.log('File could not be loaded')
     }
 }
 
@@ -32,9 +36,21 @@ function getPlaceCommandArgs(line){
     return args
 }
 
+function isValidTextFile(filename){
+    let index = filename.lastIndexOf('.')
+    let fileType= filename.slice(index +1)
+
+    if(fileType === 'txt'){
+        return true
+    }else{
+        throw TypeError("File must be of type .txt")
+    }
+}
+
 module.exports = {
     readFile: readFile,
     getCommandFromLine: getCommandFromLine,
-    getPlaceCommandArgs: getPlaceCommandArgs
+    getPlaceCommandArgs: getPlaceCommandArgs,
+    isValidTextFile: isValidTextFile
 }
 

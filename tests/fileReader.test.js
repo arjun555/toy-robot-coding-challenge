@@ -1,4 +1,4 @@
-const {readFile, getCommandFromLine, getPlaceCommandArgs} = require('../src/fileReader')
+const {readFile, getCommandFromLine, getPlaceCommandArgs, isValidTextFile} = require('../src/fileReader')
 
 describe('Test File Reader', ()=>{
 
@@ -40,5 +40,21 @@ describe('Test File Reader', ()=>{
         let input = "place 1 , 3, north"
         let arr = ["1", "3", "north"]
         expect(getPlaceCommandArgs(input)).toMatchObject(arr)
+    })
+
+    it('returns true if the file type is .txt', ()=>{
+        let filename = 'somefile.txt'
+        expect(isValidTextFile(filename)).toBe(true)
+
+    })
+
+    it('throws an error if the file type is not .txt', ()=>{
+        let filename = 'somefile.doc'
+        // wrap the code in a function, otherwise the error will not be caught
+        function notTextFile(){
+            isValidTextFile(filename)
+        }
+        expect(notTextFile).toThrowError(TypeError)
+
     })
 })
