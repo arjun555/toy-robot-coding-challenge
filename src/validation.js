@@ -1,5 +1,8 @@
 const orientations = ['north', 'south', 'east', 'west']
 
+/*
+    validateOrientation - checks the user input matches expected orientation strings
+*/
 function validateOrientation(orientation){
     if(orientations.includes(orientation.toLowerCase())){
         return true

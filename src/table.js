@@ -7,6 +7,9 @@ class Table {
         }
     }
 
+    /*
+        isPositionWithinTableBounds - checks input positions are within the bounds of the table width/height
+    */
     isPositionWithinTableBounds(posX, posY){
         if(posX <= this.dimensions.x && posY <= this.dimensions.y && posX >= 0 && posY >= 0){
             return true

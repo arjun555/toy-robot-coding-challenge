@@ -12,6 +12,9 @@ if(data){
     })
 }
 
+/*
+    handleCommands - read each line and determine command to execute
+*/
 function handleCommands(line){
     let command = getCommandFromLine(line)
     switch(command){
