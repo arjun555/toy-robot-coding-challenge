@@ -1,4 +1,4 @@
-const {validateOrientation} = require('./validation')
+const {isOrientationValid} = require('./validation')
 
 class Robot{
 
@@ -16,7 +16,7 @@ class Robot{
         Place - places the robot at the specified x/y position facing the given orientation
     */
     place (x, y, orientation){
-        if (this.table.isPositionWithinTableBounds(x, y) && validateOrientation(orientation)){
+        if (this.table.isPositionWithinTableBounds(x, y) && isOrientationValid(orientation)){
             // set position of robot
             this.position = {
                 x: Number(x),

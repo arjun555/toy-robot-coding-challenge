@@ -1,25 +1,25 @@
-const {validateOrientation} = require('../src/validation')
+const {isOrientationValid} = require('../src/validation')
 
 describe('Input orientation values are valid', ()=>{
 
     test('that north is a detected as a valid orientation', ()=>{
-        expect(validateOrientation('north')).toBe(true)
+        expect(isOrientationValid('north')).toBe(true)
     })
 
     test('that south is a detected as a valid orientation', ()=>{
-        expect(validateOrientation('south')).toBe(true)
+        expect(isOrientationValid('south')).toBe(true)
     })
 
     test('that east is a detected as a valid orientation', ()=>{
-        expect(validateOrientation('east')).toBe(true)
+        expect(isOrientationValid('east')).toBe(true)
     })
 
     test('that west is a detected as a valid orientation', ()=>{
-        expect(validateOrientation('west')).toBe(true)
+        expect(isOrientationValid('west')).toBe(true)
     })
 
     test('that northhh is a detected as an invalid orientation', ()=>{
-        expect(validateOrientation('northhh')).toBe(false)
+        expect(isOrientationValid('northhh')).toBe(false)
     })
 
 })

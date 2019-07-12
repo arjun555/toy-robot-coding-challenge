@@ -3,7 +3,7 @@ const orientations = ['north', 'south', 'east', 'west']
 /*
     validateOrientation - checks the user input matches expected orientation strings
 */
-function validateOrientation(orientation){
+function isOrientationValid(orientation){
     if(orientations.includes(orientation.toLowerCase())){
         return true
     }else{
@@ -13,5 +13,5 @@ function validateOrientation(orientation){
 }
 
 module.exports = {
-    validateOrientation: validateOrientation
+    isOrientationValid: isOrientationValid
 }               
