@@ -61,7 +61,7 @@ This project uses Jest for the testing framework. To run the tests, run the foll
 
 # Design/Planning
 - I did not want to create any visual representation for this challenge, so a Javascript CLI program was implemented.
-- The commands were to be read from a textfile, located in the directory. I decided to lock this down to the commands.txt file, so that the user can edit commands within that file to their hearts desire.
+- The commands are read from a textfile, located in the directory. I decided to lock this down to the commands.txt file, so that the user can edit commands within that file to their hearts desire.
 - I seperated the Robot and Table as their own classes. 
     - The commands are actions that the robot must perform, so it made sense to have them within the Robot's class.
     - The Table class keeps the tables dimensions as parameters 
