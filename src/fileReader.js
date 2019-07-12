@@ -36,6 +36,9 @@ function getPlaceCommandArgs(line){
     return args
 }
 
+/*
+    isValidTextFile - checks if the filename is of type .txt
+*/
 function isValidTextFile(filename){
     let index = filename.lastIndexOf('.')
     let fileType= filename.slice(index +1)
